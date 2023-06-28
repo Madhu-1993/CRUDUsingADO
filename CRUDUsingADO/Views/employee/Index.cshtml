@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CRUDUsingADO.Models.employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.eid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dept)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.salary)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.eid)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dept)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new {  eid=item.eid  }) |
+                    @Html.ActionLink("Details", "Details", new {  eid=item.eid  }) |
+                    @Html.ActionLink("Delete", "Delete", new {  eid=item.eid  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

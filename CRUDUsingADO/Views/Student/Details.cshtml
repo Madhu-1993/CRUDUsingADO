@@ -1,0 +1,40 @@
+﻿@model CRUDUsingADO.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Details of Student</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.rollno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.rollno)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.sname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.sname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.branch)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.branch)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fees)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fees)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

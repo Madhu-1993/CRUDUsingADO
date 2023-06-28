@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CRUDUsingADO.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.rollno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.branch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fees)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rollno)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.branch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fees)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  rollno=item.rollno  }) |
+                @Html.ActionLink("Details", "Details", new { rollno=item.rollno }) |
+                @Html.ActionLink("Delete", "Delete", new { rollno=item.rollno})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
